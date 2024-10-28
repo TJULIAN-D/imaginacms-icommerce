@@ -109,4 +109,20 @@
 @stop
 @endonce
 
+@else
+
+    @if($product->is_sold_out)
+        <div class="buttons {{$buttonsLayout}} {{$buttonsPosition}} {{$withTextInAddToCart ? "with-add-cart-text" : "without-add-cart-text"}} my-3">
+        @php $contactUrl=setting('icommerce::customIndexContactLabel', null, 'Contáctenos'); @endphp
+        <x-isite::button :style="$buttonsLayout" buttonClasses="contact button-small"
+                         :withIcon="$withIconInAddToCart"
+                         :onclick="'window.livewire.emit(\'makeQuote\','.$product->id.')'"
+                         iconClass="fa fa-envelope"
+                         :withLabel="$withTextInAddToCart"
+                         :label="$contactUrl"
+                         :sizeLabel="$bottomFontSize"
+        />
+        </div>
+    @endif
+
 @endif
