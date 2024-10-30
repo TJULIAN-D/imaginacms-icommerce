@@ -77,9 +77,6 @@
     -o-object-fit: {{$imageObjectFit}} !important;
     object-fit: {{$imageObjectFit}} !important;
 }
-.col-lg-2 .add-to-cart-with-quantity {
-    justify-content: center !important;
-}
 
 @endif
 </style>
