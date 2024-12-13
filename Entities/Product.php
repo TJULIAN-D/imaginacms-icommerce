@@ -97,7 +97,16 @@ class Product extends CrudModel implements TaggableInterface
   ];
 
   public $modelRelations = [
-    'productWarehouses' => 'belongsToMany',
+    'productWarehouses' => [
+      'relation' => 'belongsToMany',
+      'type' => 'UpdateOrCreateMany',
+      'compareKeys' => ['warehouse_id'],
+      'model' => 'Modules\Icommerce\Entities\ProductWarehouse'
+    ],
+    'discounts' => [
+      'relation' => 'hasMany', //Important: For this relationship remember the mandatory parameters to create and update
+      'model' => 'Modules\Icommerce\Entities\ProductDiscount'
+    ]
   ];
 
   protected $presenter = ProductPresenter::class;
