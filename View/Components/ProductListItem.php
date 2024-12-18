@@ -68,6 +68,8 @@ class ProductListItem extends Component
   public $showDeleteBtn;
   public $productLayout;
   public $currentRoute;
+  public $ribbonTextSize;
+  public $ribbonLabelSize;
 
   /**
    * Create a new component instance.
@@ -132,7 +134,9 @@ class ProductListItem extends Component
                               $labelButtonAddProduct = null,
                               $showDeleteBtn = false,
                               $productLayout=null,
-                              $currentRoute = null
+                              $currentRoute = null,
+                              $ribbonTextSize = null,
+                              $ribbonLabelSize = null
   )
   {
     $this->product = $item;
@@ -196,6 +200,8 @@ class ProductListItem extends Component
     $this->showDeleteBtn = $showDeleteBtn;
     $this->productLayout = $productListItemLayout;
     $this->currentRoute = $currentRoute;
+    $this->ribbonTextSize = $ribbonTextSize ?? setting('icommerce::productRibbonTextSize', null, null);
+    $this->ribbonLabelSize = $ribbonLabelSize ?? setting('icommerce::productRibbonLabelSize', null, null);
 
     if (!empty($parentAttributes))
       $this->getParentAttributes($parentAttributes);

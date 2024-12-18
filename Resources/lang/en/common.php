@@ -154,6 +154,9 @@ return [
     'productImageObjectFit' => 'Image object fit',
     'productShowGalleryLayout' => 'Gallery Template',
     'productResponsive' => 'Responsive Gallery',
+    'productRibbonTextSize' => 'Discount value size',
+    'productRibbonLabelSize' => 'Discount text size',
+    'productWithDescription' => 'Show Description',
     'tenant' => [
       'group' => 'Tenants',
       'tenantWithCentralData' => 'Entities with central data',
