@@ -17,11 +17,11 @@
       </label>
       @php($mediaFiles = $paymentMethod->mediaFiles())
       @if(isset($mediaFiles->mainimage->relativeMediumThumb) && !strpos($mediaFiles->mainimage->relativeMediumThumb,"default.jpg"))
-        <img alt="payment method image" src="{{$mediaFiles->mainimage->relativeMediumThumb}}" class="img-responsive float-right" style="max-height: 100px; width: auto; max-width: 60%;">
+        <img alt="payment method image" src="{{$mediaFiles->mainimage->relativeMediumThumb}}" class="image float-right">
       @endif
     </div>
     
-    <div class="card-block">
+    <div class="card-block py-2">
       {!! $paymentMethod->description !!}
     </div>
   
