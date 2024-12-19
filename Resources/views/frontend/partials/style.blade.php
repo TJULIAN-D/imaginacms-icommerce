@@ -532,5 +532,7 @@
         width: 20px;
         fill: white;
     }
-
+    .text-primary-ecommerce {
+        color: var(--primary);
+    }
 </style>
