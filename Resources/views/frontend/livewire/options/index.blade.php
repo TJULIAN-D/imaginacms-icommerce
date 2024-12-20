@@ -16,7 +16,7 @@
 
     <div class="price ">
       <div class="mb-0">
-      <span class="text-primary font-weight-bold">
+      <span class="text-primary-ecommerce font-weight-bold">
         {{isset($currency->id) ? $currency->symbol_left : '$'}}
         {{formatMoney($dynamicPrice = ($product->discount->price ?? $product->price) +$this->priceOptions )}}
         {{isset($currency->id) ? $currency->symbol_right : ''}}

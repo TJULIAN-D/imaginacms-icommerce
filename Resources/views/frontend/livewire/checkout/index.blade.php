@@ -1,7 +1,5 @@
 <div id="checkout" class="page checkout checkout-tabs" wire:init="init">
-  
 
-  
   <div class="container">
     <div class="row">
       <div class="col">
