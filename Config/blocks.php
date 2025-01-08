@@ -432,7 +432,7 @@ return [
               "label" => "Estilo para el descuento",
               "options" => $vAttributes["ribbonStyle"]
             ]
-                    ],
+          ],
           "discountPosition" => [
             "name" => "discountPosition",
             "value" => "top-right",
@@ -441,23 +441,39 @@ return [
               "label" => "Posición del descuento",
               "options" => $vAttributes["ribbonPosition"]
             ]
-                        ],
+          ],
           "ribbonBackgroundColor" => [
             "name" => "ribbonBackgroundColor",
             "type" => "inputColor",
             "props" => [
               "label" => "Color de fondo de cinta"
             ]
-                    ],
+          ],
           "ribbonTextColor" => [
             "name" => "ribbonTextColor",
             "type" => "inputColor",
             "props" => [
               "label" => "Color texto de cinta"
             ]
-                        ],
+          ],
+          "ribbonTextSize" => [
+            "name" => "ribbonTextSize",
+            "type" => "input",
+            "props" => [
+                "label" => "Tamaño del valor descuento",
+                "type" => "number",
+            ]
+          ],
+          "ribbonLabelSize" => [
+            "name" => "ribbonLabelSize",
+            "type" => "input",
+            "props" => [
+                "label" => "Tamaño del texto DTO",
+                "type" => "number",
+            ]
+          ],
         ]
-                    ],
+      ],
       "image" => [
         "title" => "Imagen",
         "fields" => [
@@ -469,7 +485,7 @@ return [
               "label" => "Aspecto de fotografía",
               "options" => $vAttributes["imageAspectProduct"]
             ]
-                        ],
+          ],
           "imagePadding" => [
             "name" => "imagePadding",
             "value" => "0",
@@ -479,7 +495,7 @@ return [
               "type" => "number",
               "min" => "0",
             ]
-                    ],
+          ],
           "imageBorder" => [
             "name" => "imageBorder",
             "value" => "0",
@@ -488,14 +504,14 @@ return [
               "label" => "Borde Externo",
               "options" => $vAttributes["validation"]
             ]
-                        ],
+          ],
           "imageBorderColor" => [
             "name" => "imageBorderColor",
             "type" => "inputColor",
             "props" => [
               "label" => "Color borde"
             ]
-                    ],
+          ],
           "imageBorderRadius" => [
             "name" => "imageBorderRadius",
             "value" => "0",
@@ -505,7 +521,7 @@ return [
               "type" => "number",
               "min" => "0"
             ]
-                ],
+          ],
           "imageObjectFit" => [
             "name" => "imageObjectFit",
             "value" => "contain",
@@ -514,7 +530,7 @@ return [
               "label" => "Ajuste de Imagen",
               "options" => $vAttributes["imageObject"]
             ]
-            ],
+          ],
         ]
       ]
     ]

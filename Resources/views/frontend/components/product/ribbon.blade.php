@@ -29,19 +29,32 @@
       </div>
     </div>
   @endif
-    <style>
-        /*Discount Ribbon*/
-        .productRibbon .ribbonDiscount .asideRibbon {
-            color: {{$ribbonTextColor}};
-            background-color: {{$ribbonBackgroundColor}} !important;
-        }
-        .productRibbon.circle .ribbonDiscount .asideRibbon {
-            background-color: {{$ribbonBackgroundColor}} !important;
-        }
-        .productRibbon .ribbonDiscount .asideRibbon::after,
-        .productRibbon.flag.top-left .asideRibbon::after,
-        .productRibbon.square.top-left .asideRibbon::after {
-            border-color: transparent {{$ribbonBackgroundColor}} !important;
-        }
-    </style>
+  @once
+  <style>
+    /*Discount Ribbon*/
+    .productRibbon .ribbonDiscount .asideRibbon .ribbonLabel {
+        font-size: {{$ribbonLabelSize}}px !important;
+    }
+    .productRibbon .ribbonDiscount .asideRibbon {
+        font-size: {{$ribbonTextSize}}px !important;
+        color: {{$ribbonTextColor}};
+        background-color: {{$ribbonBackgroundColor}} !important;
+    }
+    .productRibbon.circle .ribbonDiscount .asideRibbon {
+        background-color: {{$ribbonBackgroundColor}} !important;
+    }
+    .productRibbon.flag.top-left .ribbonDiscount .asideRibbon:after,
+    .productRibbon.flag.top-right .ribbonDiscount .asideRibbon:after {
+        content: none !important;
+    }
+    .productRibbon.flag.top-right .ribbonDiscount .asideRibbon {
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        padding: 8px 10px 8px 18px !important;
+    }
+    .productRibbon.flag.top-left .ribbonDiscount .asideRibbon {
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        padding: 8px 18px 8px 10px !important;
+    }
+  </style>
+  @endonce
 </div>

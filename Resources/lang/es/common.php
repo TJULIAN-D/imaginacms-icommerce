@@ -167,6 +167,9 @@ return [
     'productImageObjectFit' => 'Ajuste de la imagen',
     'productShowGalleryLayout' => 'Plantilla de Galeria',
     'productResponsive' => 'Responsive Galeria',
+    'productRibbonTextSize' => 'Tamaño del valor descuento',
+    'productRibbonLabelSize' => 'Tamaño del texto DTO',
+    'productWithDescription' => 'Mostrar Descripción',
     'warehouse' => [
       'groupName' => 'Bodegas',
       'warehouseFunctionality' => 'Activar funcionalidad para Bodegas',

@@ -569,7 +569,7 @@ return [
       'newValueMode' => 'add-unique',
       'options' => [
         ['label' => 'Superior-Derecha', 'value' => 'top-right'],
-        ['label' => 'Supeerior-Izquierda', 'value' => 'top-left'],
+        ['label' => 'Superior-Izquierda', 'value' => 'top-left'],
       ]
     ]
   ],
@@ -593,6 +593,28 @@ return [
     'type' => 'inputColor',
     'props' => [
       'label' => 'icommerce::common.settings.productRibbonTextColor'
+    ]
+  ],
+  'productRibbonTextSize' => [
+    "onlySuperAdmin" => true,
+    'name' => 'icommerce::productRibbonTextSize',
+    'type' => 'input',
+    'groupName' => 'product',
+    'groupTitle' => 'icommerce::common.settings.product.group',
+    'props' => [
+        'type' => "number",
+        'label' => 'icommerce::common.settings.productRibbonTextSize'
+    ]
+  ],
+  'productRibbonLabelSize' => [
+    "onlySuperAdmin" => true,
+    'name' => 'icommerce::productRibbonLabelSize',
+    'type' => 'input',
+    'groupName' => 'product',
+    'groupTitle' => 'icommerce::common.settings.product.group',
+    'props' => [
+        'type' => "number",
+        'label' => 'icommerce::common.settings.productRibbonLabelSize'
     ]
   ],
   'productImageBorder' => [
@@ -1103,17 +1125,6 @@ return [
         ['label' => 'Texto de peso normal', 'value' => 'normal'],
         ['label' => 'Texto más ligero (en relación con el elemento principal)', 'value' => 'lighter'],
       ]
-    ]
-  ],
-  'productProductBackgroundColor' => [
-    "onlySuperAdmin" => true,
-    'value' => "#ffffff",
-    'name' => 'icommerce::productProductBackgroundColor',
-    'groupName' => 'product',
-    'groupTitle' => 'icommerce::common.settings.product.group',
-    'type' => 'inputColor',
-    'props' => [
-      'label' => 'icommerce::common.settings.productProductBackgroundColor'
     ]
   ],
   'productProductBackgroundColor' => [

@@ -1,7 +1,7 @@
 <div id="cardCustomerData" class="card card-block p-3 mb-3">
-  <div class="row m-0 pointer" data-toggle="collapse" href="#customerData" role="button" aria-expanded="false"
+  <div class="row m-0 pointer card-number-text" data-toggle="collapse" href="#customerData" role="button" aria-expanded="false"
        aria-controls="customerData">
-    <div class="rounded-circle bg-primary text-white mr-3 d-flex align-items-center px-3 py-2">
+    <div class="number-check">
       {{ config('asgard.icommerce.config.infoCardCheckout.customerData.numberPosition')}}
     </div>
     <h3 class="d-flex align-items-center my-1 h5">
@@ -33,10 +33,11 @@
              placeholder="{{trans('icommerce::checkout.buttons.placeholderInputEmail')}}" class="form-control"
              type="text">
     @else
+      <hr class="my-2"/>
       @guest
         <div class="card mb-0 border-0">
           <div class="col py-2">
-            @php $reedirectUrl = "/ipanel/#/auth/login/?redirectTo=".url(route($locale . '.icommerce.store.checkout')); @endphp
+            @php $reedirectUrl = "/ipanel/#/auth/login/?redirectTo=".tenant_route(request()->getHost(), \LaravelLocalization::getCurrentLocale() . '.icommerce.store.checkout'); @endphp
             <a class="btn btn-sm btn-outline-primary" onclick="location.href='{{$reedirectUrl}}'">
               <i class="fa-solid fa-user"></i>
               {{ trans('icommerce::customer.sub_titles.logging') }}

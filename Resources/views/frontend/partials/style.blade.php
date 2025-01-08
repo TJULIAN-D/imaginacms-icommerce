@@ -486,7 +486,11 @@
             align-items: initial !important;
         }
     }
-
+    #content_index_commerce .custom-control-input:checked~.custom-control-label:before {
+        color: #fff;
+        border-color: var(--primary);
+        background-color: var(--primary);
+    }
 </style>
 
 <!-- show styles -->
@@ -528,5 +532,7 @@
         width: 20px;
         fill: white;
     }
-
+    .text-primary-ecommerce {
+        color: var(--primary);
+    }
 </style>
