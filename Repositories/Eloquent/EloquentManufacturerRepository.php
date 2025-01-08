@@ -53,9 +53,22 @@ class EloquentManufacturerRepository extends EloquentCrudRepository implements M
 
     if(!isset($params->order) || empty($params->order)){
       $query->orderBy('sort_order', 'desc');//Add order to query
-      $query->leftJoin("icommerce__manufacturer_trans as mt", "mt.manufacturer_id", "icommerce__manufacturers.id")
-        ->orderBy('mt.name', 'asc');
+      $query->orderByTranslation('name', 'asc');
     }
+
+    //add filter by search
+    if (isset($filter->search)) {
+      //find search in columns
+      $query->where(function ($query) use ($filter) {
+        $query->whereHas('translations', function ($query) use ($filter) {
+          $query->where('locale', $filter->locale)
+            ->where('name', 'like', '%' . $filter->search . '%');
+        })->orWhere('icommerce__manufacturers.id', 'like', '%' . $filter->search . '%')
+          ->orWhere('updated_at', 'like', '%' . $filter->search . '%')
+          ->orWhere('created_at', 'like', '%' . $filter->search . '%');
+      });
+    }
+
     //Response
     return $query;
   }
