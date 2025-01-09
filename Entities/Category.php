@@ -263,7 +263,7 @@ class Category extends CrudModel
       $baseUrls[] = $category->url;
     }
 
-    if (!$this->wasRecentlyCreated && $this->status == 1) {
+    if (!$this->wasRecentlyCreated && $this->status) {
       $baseUrls[] = $this->url;
     }
     $urls = ['urls' => $baseUrls];
