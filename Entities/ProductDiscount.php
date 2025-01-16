@@ -140,11 +140,7 @@ class ProductDiscount extends CrudModel
 
   public function getCacheClearableData()
   {
-    $baseUrls = [config("app.url")];
-
-    if (!$this->product->wasRecentlyCreated) {
-      $baseUrls[] = $this->product->url;
-    }
+    $baseUrls = [config("app.url"), $this->product->url];
     $urls = ['urls' => $baseUrls];
 
     return $urls;
