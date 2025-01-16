@@ -137,4 +137,13 @@ class ProductDiscount extends CrudModel
       return floatval(($value * $this->discount) / 100);
     }
   }
+
+  public function getCacheClearableData()
+  {
+    $baseUrls = [config("app.url"), $this->product->url];
+    $urls = ['urls' => $baseUrls];
+
+    return $urls;
+  }
+
 }
