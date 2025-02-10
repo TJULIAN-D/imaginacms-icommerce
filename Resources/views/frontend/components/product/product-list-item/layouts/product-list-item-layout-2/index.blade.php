@@ -9,12 +9,8 @@
     :tooltip="$tooltipEditLink"
   />
   @include('icommerce::frontend.components.product.meta')
-
-
-
   @if(isset($itemListLayout) && $itemListLayout=='one')
     <div class="row product-list-layout-one">
-
       <div class="col-6">
         <div class="row justify-content-center position-relative m-0">
           @include('icommerce::frontend.components.product.ribbon')
@@ -30,8 +26,8 @@
               imgClasses="product-img image-static"
               :imgStyles="'padding: '.$imagePadding.'px; border: '.($imageBorder ? '1' : '0').'px solid '.$imageBorderColor.'; border-radius: '.$imageBorderRadius.'px;'"
               itemId="{{$product->id}}"
+              wire:key="product-image-{{$product->id}}"
             />
-
             @if($secondaryImageHover && $issetSecondaryImage)
               <livewire:media::dynamic-image
                 :alt="$product->name"
@@ -43,23 +39,19 @@
                 imgClasses="product-img image-transition"
                 :imgStyles="'padding: '.$imagePadding.'px; border: '.($imageBorder ? '1' : '0').'px solid '.$imageBorderColor.'; border-radius: '.$imageBorderRadius.'px;'"
                 itemId="{{$product->id}}"
+                wire:key="product-image-{{$product->id}}"
               />
             @endif
           </div>
         </div>
-
       </div>
       <div class="col-6">
         @include('icommerce::frontend.components.product.product-list-item.layouts.product-list-item-layout-2.infor')
-
-
       </div>
     </div>
   @else
-
     @include('icommerce::frontend.components.product.ribbon')
     @include('icommerce::frontend.components.product.product-list-item.layouts.product-list-item-layout-2.infor')
   @endif
-
   @include('icommerce::frontend.components.product.global-inline-css')
 </div>
